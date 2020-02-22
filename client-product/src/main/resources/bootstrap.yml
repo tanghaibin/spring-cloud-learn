@@ -1,0 +1,27 @@
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud: DEBUG
+server:
+  port: 9001
+spring:
+  application:
+    name: client-product
+  cloud:
+    config:
+      label: master
+      profile: dev
+      name: product
+      discovery:
+        service-id: learn-config
+        enabled: true
+      fail-fast: true
+      enabled: true
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+  instance:
+    hostname: localhost

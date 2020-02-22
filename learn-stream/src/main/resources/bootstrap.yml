@@ -1,0 +1,15 @@
+server:
+  port: 8006
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+  cloud:
+    stream:
+        bindings:
+          # 对于绑定通道的配置，此值为@Output注解对应的value名称
+          SMS_OUTPUT:
+            # 此通道的消息投递的目标交换器，如果不设置此值，则默认为@Output中的值作为交换机的名称
+            destination: SMS_EXCHANGE
+          SMS_INPUT:
+            destination: SMS_EXCHANGE

@@ -1,0 +1,1 @@
+feign融合了ribbon的负载均衡功能

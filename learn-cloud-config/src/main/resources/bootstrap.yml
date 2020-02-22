@@ -1,0 +1,31 @@
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud: DEBUG
+server:
+  port: 8005
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/tanghaibin/learn-cloud-config.git
+  application:
+    name: learn-config
+  rabbitmq:
+    host: localhost
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        # cloud bus 2.0x 需要把bus-refresh暴露给actuator ，不然会找不到此地址
+        # http://hostname/actuator/bus-refresh
+        include: bus-refresh

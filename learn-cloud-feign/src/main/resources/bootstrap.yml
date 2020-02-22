@@ -1,0 +1,13 @@
+server:
+  port: 8004
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+spring:
+  application:
+    name: learn-feign

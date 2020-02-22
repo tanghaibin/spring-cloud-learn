@@ -1,0 +1,16 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: register-center
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 是否从注册中心拉取服务提供者
+    fetch-registry: false
+    # 是否注册到服务中心
+    register-with-eureka: false
+    # 服务中心注册地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

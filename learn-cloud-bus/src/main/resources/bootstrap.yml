@@ -1,0 +1,29 @@
+server:
+  port: 9002
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+spring:
+  application:
+    name: learn-bus
+  cloud:
+    config:
+      label: master
+      name: product
+      profile: dev
+      enabled: true
+      fail-fast: true
+      discovery:
+        service-id: learn-config
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: bus-refresh

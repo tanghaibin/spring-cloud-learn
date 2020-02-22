@@ -1,0 +1,1 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration =com.hobson.cloud.bus.config.CustomConfigServiceBootstrapConfiguration

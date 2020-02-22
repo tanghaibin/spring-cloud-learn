@@ -1,0 +1,22 @@
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
+server:
+  port: 8003
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+spring:
+  application:
+    name: learn-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
